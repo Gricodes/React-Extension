@@ -2,15 +2,15 @@ import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Home from "./pages/Home";
 import About from "./pages/About";
-import NavBar from "./componnts/NavBar";
-import Alert from "./componnts/Alert";
-import {AlertState} from "./context/alert/AlertState";
-import {FirebaseState} from "./context/firebase/FirebaseState";
+import NavBar from "./components/NavBar";
+import Alert from "./components/Alert";
+// import {AlertState} from "./context/alert/AlertState";
+// import {FirebaseState} from "./context/firebase/FirebaseState";
 
 const App = () => {
     return (
-        <FirebaseState>
-            <AlertState>
+        // <FirebaseState>
+        //     <AlertState>
                 <BrowserRouter>
                     <NavBar/>
                     <div className='container pt-4'>
@@ -21,8 +21,8 @@ const App = () => {
                         </Switch>
                     </div>
                 </BrowserRouter>
-            </AlertState>
-         </FirebaseState>
+         //    </AlertState>
+         // </FirebaseState>
     );
 }
 

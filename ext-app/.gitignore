@@ -4,8 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
-.xml
-
+*.xml
+.idea/workspace.xml
 # testing
 /coverage
 
