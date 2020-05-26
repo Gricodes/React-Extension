@@ -1,15 +1,14 @@
 import React from "react";
 import axios from "axios";
 
-axios.post(`https://ext-app-hooks.firebaseio.com/notes.json`, {title:'barev', date : new Date().toLocaleDateString() })
-    .then(ppp => {
-    })
-
+// axios.post(`https://ext-app-hooks.firebaseio.com/notes.json`, {title:'barev', date : new Date().toLocaleDateString() })
+//     .then(ppp => {
+//     })
 //
- axios.get(`https://ext-app-hooks.firebaseio.com/notes.json`)
-    .then(response => {
-        console.log(response.data)
-    })
+//  axios.get(`https://ext-app-hooks.firebaseio.com/notes.json`)
+//     .then(response => {
+//         console.log(response.data)
+//     })
 
 
 
