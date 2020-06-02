@@ -1,13 +1,11 @@
 import React from "react";
 
-
-
 const Notes = (props) => {
-    const onClickFunc = (number)=>{
-        props.removeNoteAC(number)
+    const onClickFunc = (id)=>{
+        props.deleteNoteThunk(id)
     }
 
-    console.log(props.notes)
+
 
     return (
         <ul className="list-group">

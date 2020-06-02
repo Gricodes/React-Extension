@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/React-Extension.iml" filepath="$PROJECT_DIR$/.idea/React-Extension.iml" />
       <module fileurl="file://$PROJECT_DIR$/../React-Redux-65/.idea/React-Redux-65.iml" filepath="$PROJECT_DIR$/../React-Redux-65/.idea/React-Redux-65.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ReactJS-Repeat/.idea/ReactJS-Repeat.iml" filepath="$PROJECT_DIR$/../ReactJS-Repeat/.idea/ReactJS-Repeat.iml" />
     </modules>
   </component>
 </project>

@@ -9,10 +9,7 @@ const REMOVE_NOTE = 'REMOVE_NOTE';
 
 let initialState = {
     notes: [],
-    delNotes: [],
-    alertVisible: false,
-    type: null,
-    text: null
+    alertStatus:'warning'
 };
 
 export const addNotesAC = (payload) => {
@@ -33,16 +30,36 @@ export const showAlertAC = (payload) => {
         payload: payload
     }
 }
+
 export const getNotesThunk = () => {
-    return (dispatch) => {
-        NotesAPI.getNotesApi().then(response => {
-          const payload =  Object.keys(response.data).map(key => {
-                return{
-                    ...response.data[key],
-                    id:key
+    return async(dispatch) => {
+       let data = await NotesAPI.getNotesApi()
+            if (!data) {
+                dispatch(addNotesAC(''));
+                return null
+            }
+            const payload = Object.keys(data).map(key => {
+                return {
+                    ...data[key],
+                    id: key
                 }
             })
             dispatch(addNotesAC(payload));
+    }
+};
+
+export const postNotesThunk = (title) => {
+    return async (dispatch) => {
+        let data = await NotesAPI.postNotesApi(title)
+        if (data){
+            dispatch(getNotesThunk());
+        }
+    }
+};
+export const deleteNoteThunk = (noteId) => {
+    return (dispatch) => {
+        NotesAPI.deleteNoteApi(noteId).then(response => {
+            dispatch(getNotesThunk());
         });
     }
 };
