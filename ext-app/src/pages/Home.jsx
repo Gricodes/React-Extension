@@ -5,19 +5,19 @@ import {redirectComponentHoc} from "../HOC/redirectComponentHoc";
 import {showAlertAC, getNotesThunk, postNotesThunk, deleteNoteThunk} from "../redux/homeReducer";
 import {connect} from "react-redux";
 import {compose} from "redux";
-import Alert from "../components/Alert";
+// import Alert from "../components/Alert";
 
 const Home = (props) => {
 
     useEffect(() => {
         props.getNotesThunk()
         //eslint-disable-next-line
-        // because we don’t have useState so that our empty array depends on state
     }, [])
+    // because we don’t have useState so that our empty array depends on state
 
     return (
         <div className="container">
-            <Alert alertStatus={props.alertStatus}/>
+            {/*<Alert alertStatus={props.alertStatus}/>*/}
             <Form {...props}/>
             <hr/>
             {!props.notes.length

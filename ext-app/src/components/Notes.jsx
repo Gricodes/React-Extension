@@ -5,8 +5,6 @@ const Notes = (props) => {
         props.deleteNoteThunk(id)
     }
 
-
-
     return (
         <ul className="list-group">
             {props.notes.map((i,key) => (
