@@ -1,6 +1,5 @@
 import React from "react";
-import warning from "react-redux/lib/utils/warning";
-
+// import {CSSTransition} from 'react-transition-group';
 
 const Alert = (props) => {
     let danger = 'Warning! The note name must not be empty';
@@ -8,6 +7,13 @@ const Alert = (props) => {
     let warning = 'Added a new note'
 
     return (
+        // <CSSTransition
+        //     in={props.hideAlert}
+        //     timeout={5000}
+        //     classNames={'alert'}
+        //     mountOnEnter
+        //     unmountOnExit
+        // >
         <div className={`alert alert-${props.alertType} alert-dismissible fade ${props.hideAlert}`}
              role="alert">
             {props.alertType === 'warning' && <strong>{warning}</strong>}
@@ -18,6 +24,7 @@ const Alert = (props) => {
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
+        // </CSSTransition>
     )
 }
 export default Alert;

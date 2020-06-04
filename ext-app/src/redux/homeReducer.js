@@ -1,7 +1,5 @@
 import {NotesAPI} from "../api/api";
 
-const SHOW_ALERT = 'SHOW_ALERT';
-const HIDE_ALERT = 'HIDE_ALERT';
 // const SHOW_LOADER = 'SHOW_LOADER';
 const ADD_NOTES = 'ADD_NOTES';
 // const FETCH_NOTES = 'FETCH_NOTES';
@@ -15,18 +13,6 @@ let initialState = {
 export const addNotesAC = (payload) => {
     return {
         type: ADD_NOTES,
-        payload: payload
-    }
-}
-export const removeNoteAC = (payload) => {
-    return {
-        type: REMOVE_NOTE,
-        payload: payload
-    }
-}
-export const showAlertAC = (payload) => {
-    return {
-        type: SHOW_ALERT,
         payload: payload
     }
 }
@@ -77,16 +63,6 @@ const homeReducer = (state = initialState, action) => {
                 //     ...state.notes.slice(0, action.payload),
                 //     ...state.notes.slice(action.payload + 1)
                 // ],
-            };
-        case SHOW_ALERT:
-            return {
-                ...state,
-                alertVisible: action.payload
-            };
-        case HIDE_ALERT:
-            return {
-                ...state,
-                alertVisible: action.payload
             };
         default:
             return state;

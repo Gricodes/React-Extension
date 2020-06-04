@@ -14,8 +14,46 @@ code {
   monospace;
 }
 
-.note{
+.note {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.alert-enter {
+  opacity: 0;
+  background: #0c7fcd;
+}
+
+.alert-enter-active {
+  transition: opacity 5000ms ease-out;
+  opacity: 1;
+}
+
+.alert-exit-active {
+  transition: opacity 5000ms ease-out;
+  opacity: 0;
+}
+
+.note-enter-active {
+  animation: note 300ms ease-out alternate-reverse;
+}
+
+.note-exit-active {
+  animation: note 500ms ease-out forwards;
+}
+
+@keyframes note {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  30% {
+    opacity: .5;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
 }
