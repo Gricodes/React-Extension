@@ -1,13 +1,12 @@
 import {NotesAPI} from "../api/api";
 
-// const SHOW_LOADER = 'SHOW_LOADER';
+const SHOW_HIDE_LOADER = 'SHOW_HIDE_LOADER';
 const ADD_NOTES = 'ADD_NOTES';
-// const FETCH_NOTES = 'FETCH_NOTES';
 const REMOVE_NOTE = 'REMOVE_NOTE';
 
 let initialState = {
     notes: [],
-    alertStatus:'warning'
+    alertStatus: 'warning',
 };
 
 export const addNotesAC = (payload) => {
@@ -16,28 +15,27 @@ export const addNotesAC = (payload) => {
         payload: payload
     }
 }
-
 export const getNotesThunk = () => {
-    return async(dispatch) => {
-       let data = await NotesAPI.getNotesApi()
-            if (!data) {
-                dispatch(addNotesAC(''));
-                return null
+    return async (dispatch) => {
+        let data = await NotesAPI.getNotesApi()
+        if (!data) {
+            dispatch(addNotesAC(''));
+            return null
+        }
+        const payload = Object.keys(data).map(key => {
+            return {
+                ...data[key],
+                id: key
             }
-            const payload = Object.keys(data).map(key => {
-                return {
-                    ...data[key],
-                    id: key
-                }
-            })
-            dispatch(addNotesAC(payload));
+        })
+        dispatch(addNotesAC(payload));
     }
 };
 
 export const postNotesThunk = (title) => {
     return async (dispatch) => {
         let data = await NotesAPI.postNotesApi(title)
-        if (data){
+        if (data) {
             dispatch(getNotesThunk());
         }
     }

@@ -3,8 +3,8 @@ import React from "react";
 
 const Alert = (props) => {
     let danger = 'Warning! The note name must not be empty';
-    let success = 'You successfully added a new note';
-    let warning = 'Added a new note'
+    let success = 'You successfully added a new note !';
+    let warning = 'Please added a new note'
 
     return (
         // <CSSTransition

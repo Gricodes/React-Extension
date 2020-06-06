@@ -5,6 +5,7 @@ import {redirectComponentHoc} from "../HOC/redirectComponentHoc";
 import {getNotesThunk, postNotesThunk, deleteNoteThunk} from "../redux/homeReducer";
 import {connect} from "react-redux";
 import {compose} from "redux";
+import {Loader} from "../components/Loader";
 
 const Home = (props) => {
     useEffect(() => {
@@ -18,7 +19,7 @@ const Home = (props) => {
             <Form {...props}/>
             <hr/>
             {!props.notes.length
-                ? 'You dont have Note'
+                ? <><Loader/><br/><div className='textSpan'>'You dont have Note'</div></>
                 : <Notes {...props} notes={props.notes}/>}
         </div>
     )

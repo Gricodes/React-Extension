@@ -13,7 +13,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 }
-
+.loaderContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.textSpan{
+  text-align: center;
+}
 .note {
   display: flex;
   justify-content: space-between;
