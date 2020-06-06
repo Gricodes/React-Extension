@@ -1,6 +1,5 @@
 import {NotesAPI} from "../api/api";
 
-const SHOW_HIDE_LOADER = 'SHOW_HIDE_LOADER';
 const ADD_NOTES = 'ADD_NOTES';
 const REMOVE_NOTE = 'REMOVE_NOTE';
 

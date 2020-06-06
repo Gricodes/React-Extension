@@ -19,7 +19,7 @@ const Home = (props) => {
             <Form {...props}/>
             <hr/>
             {!props.notes.length
-                ? <><Loader/><br/><div className='textSpan'>'You dont have Note'</div></>
+                ? <><Loader/><br/><div className='textSpan'>Please wait until you have a note</div></>
                 : <Notes {...props} notes={props.notes}/>}
         </div>
     )
