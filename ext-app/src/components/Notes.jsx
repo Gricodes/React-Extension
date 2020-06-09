@@ -10,7 +10,7 @@ const Notes = (props) => {
         <TransitionGroup component='ul' className="list-group">
             {props.notes.map((i, key) => (
                     <CSSTransition
-                        key={key}
+                        key={i.id}
                         classNames={'note'}
                         timeout={{enter: 300, exit: 500}}>
                         <li className="list-group-item note">

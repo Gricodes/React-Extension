@@ -13,14 +13,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 }
-.loaderContainer{
+
+.loaderContainer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.textSpan{
+
+.textSpan {
   text-align: center;
 }
+
 .note {
   display: flex;
   justify-content: space-between;
@@ -41,12 +44,15 @@ code {
   transition: opacity 5000ms ease-out;
   opacity: 0;
 }
+//------------------------------
 
 .note-enter-active {
+  background: rgba(211, 241, 217, 0.38);
   animation: note 300ms ease-out alternate-reverse;
 }
 
 .note-exit-active {
+  background: rgba(239, 212, 212, 0.38);
   animation: note 500ms ease-out forwards;
 }
 
